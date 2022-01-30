@@ -1,0 +1,34 @@
+fun main() {
+	val options = arrayOf<String> ("Paper", "Stone", "Scissors")
+	val gameChoise = getGameChoise(options)
+    val UserChoise = getUserChoise(options)
+    println (UserChoise)
+}
+fun getGameChoise(optionsParam: Array<String>) = optionsParam[(Math.random() * optionsParam.size).toInt()]
+fun getUserChoise(optionsParam: Array<String>) : String
+{
+    var isValidChoice = false
+    var userChoise = ""
+    while (!isValidChoice)
+    {
+    	print("Select one:")
+    	for (item in optionsParam) print ("$item")
+    	println(".")
+    	val userInput = readLine()
+    	if (userInput != null && userInput in optionsParam)  {
+            isValidChoice = true
+            userChoise = userInput
+        }
+        if (!isValidChoice) println ("Choice valid name plz")
+    }
+    return userChoise
+}
+fun printResult (userChoice: String, gameChoice: String) {
+    val result : String
+    if (userChoice == gameChoice) result = "Ничья"
+    else if ((userChoice == "Stone" && gameChoice == "Scissors")  ||
+            (userChoice == "Paper" && gameChoice == "Stone") ||
+            (userChoice == "Scissors" && gameChoice == "Paper")) result = "Выйгракл"
+	else result = "Loser!"
+    println ("You chose $userChoice. I chose $gameChoice. $result")
+}
