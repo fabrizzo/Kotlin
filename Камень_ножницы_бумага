@@ -2,7 +2,7 @@ fun main() {
 	val options = arrayOf<String> ("Paper", "Stone", "Scissors")
 	val gameChoise = getGameChoise(options)
     val UserChoise = getUserChoise(options)
-    printResult(userChoice, gameChoice)
+    printResult(userChoise, gameChoise)
 }
 fun getGameChoise(optionsParam: Array<String>) = optionsParam[(Math.random() * optionsParam.size).toInt()]
 fun getUserChoise(optionsParam: Array<String>) : String
