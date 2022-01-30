@@ -1,0 +1,9 @@
+fun main() {
+    var x = 0
+    println ("До цикла. x = $x.")
+    while (x<10) {
+        println("В цикле. x = $x.")
+        x = x + 2
+    }
+    println("После цикла. x = $x")
+}
